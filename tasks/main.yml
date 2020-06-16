@@ -18,20 +18,20 @@
     path: /usr/bin/pip
   register: pip
 
-- block:
+#- block:
 
-  - name: Update pip with proxy
-    pip:
-      name: pip
-      state: latest
-    register: result
-    environment:
-      http_proxy: "{{ http_proxy | default('') }}"
-      https_proxy: "{{ https_proxy | default('') }}"
-      no_proxy: "{{ no_proxy | default('') }}"
-    when: pip.stat.exists == true
+#  - name: Update pip with proxy
+#    pip:
+#      name: pip
+#      state: latest
+#    register: result
+#    environment:
+#      http_proxy: "{{ http_proxy | default('') }}"
+#      https_proxy: "{{ https_proxy | default('') }}"
+#      no_proxy: "{{ no_proxy | default('') }}"
+#    when: pip.stat.exists == true
 
-  become: yes
+#  become: yes
 
 - block:
   - name: Install pip with proxy

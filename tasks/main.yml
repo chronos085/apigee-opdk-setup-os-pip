@@ -86,16 +86,16 @@
   when: pip.stat.exists == false
   become: yes
 
-- name: Update pip packages with proxy
-  tags: ['pip']
-  become: yes
-  pip:
-    name: '{{ pip_packages }}'
-    state: present
-  environment:
-    http_proxy: "{{ http_proxy | default('') }}"
-    https_proxy: "{{ https_proxy | default('') }}"
-    no_proxy: "{{ no_proxy | default('') }}"
+#- name: Update pip packages with proxy
+#  tags: ['pip']
+#  become: yes
+#  pip:
+#    name: '{{ pip_packages }}'
+#    state: present
+#  environment:
+#    http_proxy: "{{ http_proxy | default('') }}"
+#    https_proxy: "{{ https_proxy | default('') }}"
+#    no_proxy: "{{ no_proxy | default('') }}"
 
 #
 #- name: Update pip
